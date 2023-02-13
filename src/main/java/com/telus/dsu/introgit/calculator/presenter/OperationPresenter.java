@@ -20,8 +20,8 @@ public class OperationPresenter {
             Console.printTitle("Bienvenido a calculadora");
             Console.printSubTitle("seleccione la operacion");
             Console.printText("1) Sum");
-            Console.printText("3) Multi");
             Console.printText("2) Sub");
+            Console.printText("3) Multi");
             Console.printText("5) Exponente");
             Console.printText("9) Historial");
             Console.printText("0) Salir");
