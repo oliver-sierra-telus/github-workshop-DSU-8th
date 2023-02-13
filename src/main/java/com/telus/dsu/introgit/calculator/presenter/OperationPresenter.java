@@ -14,21 +14,37 @@ public class OperationPresenter {
     public void doMenu() {
 
         int menuOption = 0;
-        Limit menuLimit = new Limit(0, 1);
+        Limit menuLimit = new Limit(0, 10);
 
         do {
             Console.printTitle("Bienvenido a calculadora");
             Console.printSubTitle("seleccione la operacion");
             Console.printText("1) Sum");
+            Console.printText("2) Sub");
+            Console.printText("3) Multi");
+            Console.printText("4) Dividir");
+            Console.printText("5) Exponente");
             Console.printText("9) Historial");
             Console.printText("0) Salir");
 
             menuOption = Console.getInt("seleccione la opcion que desea utilizar", menuLimit);
 
-            if (menuOption!=0){
+            if (menuOption != 0) {
                 switch (menuOption) {
                     case 1:
                         executeOperation(OperationsFactory.getOperationController(OperationsFactory.SUM));
+                        break;
+                    case 2:
+                        executeOperation(OperationsFactory.getOperationController(OperationsFactory.SUB));
+                        break;
+                    case 3:
+                        executeOperation(OperationsFactory.getOperationController(OperationsFactory.MULTI));
+                        break;
+                    case 4:
+                        executeOperation(OperationsFactory.getOperationController(OperationsFactory.DIV));
+                        break;
+                    case 5:
+                        executeOperation(OperationsFactory.getOperationController(OperationsFactory.POW));
                         break;
                     case 9:
                         printHistory();
@@ -52,7 +68,7 @@ public class OperationPresenter {
         System.out.println("\n\n");
     }
 
-    private void executeOperation(OperationController operationController){
+    private void executeOperation(OperationController operationController) {
         List<Integer> data = obtainData(operationController);
         operationController.setData(data);
         operationController.execute();
@@ -60,12 +76,12 @@ public class OperationPresenter {
     }
 
     private void presentResult(OperationController operationController) {
-        Console.printTitle("Resultado de la operacion     "+ operationController.getResult());
+        Console.printTitle("Resultado de la operacion     " + operationController.getResult());
         Console.printText("Presione enter para continuar");
         Console.waitForEnter();
     }
 
-    private List<Integer> obtainData(OperationController operationController){
+    private List<Integer> obtainData(OperationController operationController) {
         List<Integer> data = new LinkedList<>();
         Limit limit = new Limit(0, 100);
         for (String dataDesc : operationController.getDataDescriptionList()) {
