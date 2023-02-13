@@ -20,6 +20,11 @@ public class OperationPresenter {
             Console.printTitle("Bienvenido a calculadora");
             Console.printSubTitle("seleccione la operacion");
             Console.printText("1) Sum");
+            
+            
+
+
+            Console.printText("5) Exponente");
             Console.printText("9) Historial");
             Console.printText("0) Salir");
 
@@ -30,6 +35,11 @@ public class OperationPresenter {
                     case 1:
                         executeOperation(OperationsFactory.getOperationController(OperationsFactory.SUM));
                         break;
+
+                    case 5:
+                        executeOperation(OperationsFactory.getOperationController(OperationsFactory.POW));
+                        break;
+
                     case 9:
                         printHistory();
                         break;
