@@ -19,6 +19,7 @@ public class OperationPresenter {
             Console.printTitle("Bienvenido a calculadora");
             Console.printSubTitle("seleccione la operacion");
             Console.printText("1) Sum");
+            Console.printText("3) Multi");
             Console.printText("0) Salir");
 
             menuOption = Console.getInt("seleccione la opcion que desea utilizar", menuLimit);
