@@ -7,10 +7,15 @@ public class MultiController extends OperationController {
     
     @Override
     public void execute() {
-        result = 0;
+        result = 1;
+        String operation = "MULTI: ";
         for(int num: data) {
             result *= num;
+            operation+=num + " ,";
         }
+
+        operation+=" = "+result;
+        OperationHistoryController.addOperation(operation);
         
     }
 
