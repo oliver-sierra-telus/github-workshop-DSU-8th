@@ -21,6 +21,8 @@ public class OperationPresenter {
             Console.printSubTitle("seleccione la operacion");
             Console.printText("1) Sum");
             Console.printText("3) Multi");
+            Console.printText("2) Sub");
+            Console.printText("5) Exponente");
             Console.printText("9) Historial");
             Console.printText("0) Salir");
 
@@ -33,6 +35,13 @@ public class OperationPresenter {
                         break;
                     case 3:
                         executeOperation(OperationsFactory.getOperationController(OperationsFactory.MULTI));
+                        break;
+                    case 2:
+                        executeOperation(OperationsFactory.getOperationController(OperationsFactory.SUB));
+                        break;
+                    case 5:
+                        executeOperation(OperationsFactory.getOperationController(OperationsFactory.POW));
+                        break;
                     case 9:
                         printHistory();
                         break;
