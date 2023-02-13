@@ -14,16 +14,13 @@ public class OperationPresenter {
     public void doMenu() {
 
         int menuOption = 0;
-        Limit menuLimit = new Limit(0, 1);
+        Limit menuLimit = new Limit(0, 10);
 
         do {
             Console.printTitle("Bienvenido a calculadora");
             Console.printSubTitle("seleccione la operacion");
             Console.printText("1) Sum");
-            
-            
-
-
+            Console.printText("2) Sub");
             Console.printText("5) Exponente");
             Console.printText("9) Historial");
             Console.printText("0) Salir");
@@ -35,11 +32,12 @@ public class OperationPresenter {
                     case 1:
                         executeOperation(OperationsFactory.getOperationController(OperationsFactory.SUM));
                         break;
-
+                    case 2:
+                        executeOperation(OperationsFactory.getOperationController(OperationsFactory.SUB));
+                        break;
                     case 5:
                         executeOperation(OperationsFactory.getOperationController(OperationsFactory.POW));
                         break;
-
                     case 9:
                         printHistory();
                         break;
