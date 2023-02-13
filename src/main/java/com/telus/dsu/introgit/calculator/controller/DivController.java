@@ -8,10 +8,10 @@ public class DivController extends OperationController{
     @Override
     public void execute() {
         result = 0;
-        //String operation = "DIV";
+        String operation = "DIV";
         result = data.get(0) / data.get(1);
-        //operation += " = "+ result;
-        //OperationHistoryController.addOperation(operation);
+        operation += " = "+ result;
+        OperationHistoryController.addOperation(operation);
     }
 
     @Override
