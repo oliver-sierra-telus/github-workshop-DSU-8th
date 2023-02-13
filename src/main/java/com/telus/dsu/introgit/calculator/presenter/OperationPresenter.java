@@ -19,6 +19,7 @@ public class OperationPresenter {
             Console.printTitle("Bienvenido a calculadora");
             Console.printSubTitle("seleccione la operacion");
             Console.printText("1) Sum");
+            Console.printText("4) Dividir");
             Console.printText("0) Salir");
 
             menuOption = Console.getInt("seleccione la opcion que desea utilizar", menuLimit);
@@ -28,7 +29,9 @@ public class OperationPresenter {
                     case 1:
                         executeOperation(OperationsFactory.getOperationController(OperationsFactory.SUM));
                         break;
-                
+                    case 4:
+                        executeOperation(OperationsFactory.getOperationController(OperationsFactory.DIV));
+                        break;
                     default:
                         Console.printSubTitle("Opcion no encontrada");
                         break;
