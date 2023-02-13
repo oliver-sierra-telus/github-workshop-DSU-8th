@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.telus.dsu.introgit.calculator.controller.OperationController;
+import com.telus.dsu.introgit.calculator.controller.OperationHistoryController;
 import com.telus.dsu.introgit.calculator.controller.OperationsFactory;
 import com.telus.dsu.introgit.util.Console;
 import com.telus.dsu.introgit.util.Limit;
@@ -19,6 +20,7 @@ public class OperationPresenter {
             Console.printTitle("Bienvenido a calculadora");
             Console.printSubTitle("seleccione la operacion");
             Console.printText("1) Sum");
+            Console.printText("9) Historial");
             Console.printText("0) Salir");
 
             menuOption = Console.getInt("seleccione la opcion que desea utilizar", menuLimit);
@@ -28,7 +30,9 @@ public class OperationPresenter {
                     case 1:
                         executeOperation(OperationsFactory.getOperationController(OperationsFactory.SUM));
                         break;
-                
+                    case 9:
+                        printHistory();
+                        break;
                     default:
                         Console.printSubTitle("Opcion no encontrada");
                         break;
@@ -36,6 +40,16 @@ public class OperationPresenter {
             }
 
         } while (menuOption != 0);
+    }
+
+    private void printHistory() {
+        List<String> operationHistory = OperationHistoryController.getOperationsHistory();
+        Console.printTitle("Operation History");
+        for (String operation : operationHistory) {
+            Console.printText(operation);
+        }
+        Console.waitForEnter();
+        System.out.println("\n\n");
     }
 
     private void executeOperation(OperationController operationController){
