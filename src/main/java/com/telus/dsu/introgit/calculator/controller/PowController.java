@@ -3,17 +3,13 @@ package com.telus.dsu.introgit.calculator.controller;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SumController extends OperationController {
+public class PowController  extends OperationController{
 
     @Override
     public void execute() {
         result = 0;
-        String operation = "SUM: ";
-        for (int num : data) {
-            result+=num;
-            operation+=num +" ,";
-        }
-
+        String operation = "POW: ";
+        result = (int) Math.pow(data.get(0), data.get(1));
         operation+=" = "+ result;
         OperationHistoryController.addOperation(operation);
     }
@@ -21,8 +17,8 @@ public class SumController extends OperationController {
     @Override
     protected List<String> initDataDescrition() {
         List<String> dataDescription = new LinkedList<>();
-        dataDescription.add("Ingrese el primer numero a sumar: ");
-        dataDescription.add("Ingrese el segundo numero a sumar: ");
+        dataDescription.add("Ingrese la base");
+        dataDescription.add("Ingrese el exponente al que lo quiere elevar: ");
 
         return dataDescription;
     }
