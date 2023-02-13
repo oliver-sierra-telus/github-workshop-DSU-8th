@@ -8,7 +8,7 @@ public enum OperationsFactory {
             case SUM:
                 return new SumController();
             case MULTI:
-                return new SumController();
+                return new MultiController();
             default:
                 return null;
         }
