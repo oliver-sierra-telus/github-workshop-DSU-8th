@@ -1,11 +1,13 @@
 package com.telus.dsu.introgit.calculator.controller;
 
 public enum OperationsFactory {
-    SUM;
+    SUM, MULTI;
 
     public static OperationController getOperationController(OperationsFactory operation) {
         switch (operation) {
             case SUM:
+                return new SumController();
+            case MULTI:
                 return new SumController();
             default:
                 return null;

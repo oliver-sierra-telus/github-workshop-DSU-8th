@@ -28,7 +28,9 @@ public class OperationPresenter {
                     case 1:
                         executeOperation(OperationsFactory.getOperationController(OperationsFactory.SUM));
                         break;
-                
+                    case 3:
+                        executeOperation(OperationsFactory.getOperationController(OperationsFactory.MULTI));
+                        break;
                     default:
                         Console.printSubTitle("Opcion no encontrada");
                         break;
