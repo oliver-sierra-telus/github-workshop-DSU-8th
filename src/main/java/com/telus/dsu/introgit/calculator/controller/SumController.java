@@ -8,10 +8,14 @@ public class SumController extends OperationController {
     @Override
     public void execute() {
         result = 0;
+        String operation = "SUM: ";
         for (int num : data) {
             result+=num;
+            operation+=num +" ,";
         }
-        
+
+        operation+=" = "+ result;
+        OperationHistoryController.addOperation(operation);
     }
 
     @Override
