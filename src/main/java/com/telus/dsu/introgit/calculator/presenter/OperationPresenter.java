@@ -14,7 +14,7 @@ public class OperationPresenter {
     public void doMenu() {
 
         int menuOption = 0;
-        Limit menuLimit = new Limit(0, 1);
+        Limit menuLimit = new Limit(0, 10);
 
         do {
             Console.printTitle("Bienvenido a calculadora");
